@@ -1,10 +1,10 @@
 import React from "react";
 
 // Components
-import CardAnime from "./CardAnime";
-import SidebarAnime from "./SidebarAnime";
+import MetaCard from "./card/MetaCard";
+import SquareCard from "./card/SquareCard";
 
-function ProductAnime() {
+function Product() {
   return (
     <div className="product">
       <div className="container">
@@ -22,42 +22,42 @@ function ProductAnime() {
             </div>
             <div className="row">
               <div className="col col-4">
-                <CardAnime
+                <MetaCard
                   img="./src/img/trending/trend-1.jpg"
                   title="Card title"
                   text="The Seven Deadly Sins: Wrath of the Gods"
                 />
               </div>
               <div className="col col-4">
-                <CardAnime
+                <MetaCard
                   img="./src/img/trending/trend-2.jpg"
                   title="Card title"
                   text="Gintama Movie 2: Kanketsu-hen"
                 />
               </div>
               <div className="col col-4">
-                <CardAnime
+                <MetaCard
                   img="./src/img/trending/trend-3.jpg"
                   title="Card title"
                   text="Shingeki no Kyojin Season 3 Part 2"
                 />
               </div>
               <div className="col col-4">
-                <CardAnime
+                <MetaCard
                   img="./src/img/trending/trend-4.jpg"
                   title="Card title"
                   text="Fullmetal Alchemist: Brotherhood"
                 />
               </div>
               <div className="col col-4">
-                <CardAnime
+                <MetaCard
                   img="./src/img/trending/trend-5.jpg"
                   title="Card title"
                   text="Shiratorizawa Gakuen Koukou"
                 />
               </div>
               <div className="col col-4">
-                <CardAnime
+                <MetaCard
                   img="./src/img/trending/trend-6.jpg"
                   title="Card title"
                   text="Code Geass: Hangyaku no Lelouch R2"
@@ -79,11 +79,11 @@ function ProductAnime() {
             </ul>
 
             <div className="filter__gallery">
-              <SidebarAnime title="Boruto: Naruto next generations" />
-              <SidebarAnime title="The Seven Deadly Sins: Wrath of the Gods" />
-              <SidebarAnime title="Sword art online alicization war of underworld" />
-              <SidebarAnime title="Fate/stay night: Heaven's Feel I. presage flower" />
-              <SidebarAnime title="Fate stay night unlimited blade works" />
+              <SquareCard title="Boruto: Naruto next generations" />
+              <SquareCard title="The Seven Deadly Sins: Wrath of the Gods" />
+              <SquareCard title="Sword art online alicization war of underworld" />
+              <SquareCard title="Fate/stay night: Heaven's Feel I. presage flower" />
+              <SquareCard title="Fate stay night unlimited blade works" />
             </div>
           </div>
         </div>
@@ -92,4 +92,4 @@ function ProductAnime() {
   );
 }
 
-export default ProductAnime;
+export default Product;

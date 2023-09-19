@@ -1,6 +1,6 @@
 import React from "react";
 
-function CardAnime({ img, title, text }) {
+function MetaCard({ img, title, text }) {
   return (
     <div className="card">
       <img
@@ -16,4 +16,4 @@ function CardAnime({ img, title, text }) {
   );
 }
 
-export default CardAnime;
+export default MetaCard;

@@ -1,6 +1,6 @@
 import React from "react";
 
-function FooterAnime() {
+function Footer() {
   return (
     <footer>
       <div className="page-up">
@@ -50,4 +50,4 @@ function FooterAnime() {
   );
 }
 
-export default FooterAnime;
+export default Footer;

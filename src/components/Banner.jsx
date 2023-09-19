@@ -1,6 +1,6 @@
 import React from "react";
 
-function BannerAnime() {
+function Banner() {
   return (
     <section className="banner">
       <div className="container">
@@ -23,4 +23,4 @@ function BannerAnime() {
   );
 }
 
-export default BannerAnime;
+export default Banner;

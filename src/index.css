@@ -12,6 +12,10 @@ body {
   font-size: 1.6rem;
 }
 
+#root {
+  position: relative;
+}
+
 /* HEADER */
 .header {
   background-color: #070720;
@@ -262,7 +266,7 @@ body {
   content: '';
 }
 
-.product__sidebar__view__item {
+.squareCard {
   background-image: url('/src/img/sidebar/tv-1.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -272,19 +276,26 @@ body {
   margin-bottom: 20px;
 }
 
-.product__sidebar__view__item .ep {
+.squareCard__day {
   font-size: 13px;
-  color: #ffffff;
-  background: #e53637;
   display: inline-block;
   padding: 2px 12px;
   border-radius: 4px;
   position: absolute;
   left: 10px;
   top: 10px;
+  color: #ffffff;
 }
 
-.product__sidebar__view__item .view {
+.squareCard__day--info {
+  background: blue;
+}
+
+.squareCard__day--danger {
+  background: #e53637;
+}
+
+.squareCard__view {
   font-size: 13px;
   color: #ffffff;
   background: #3d3d3d;
@@ -296,7 +307,7 @@ body {
   top: 10px;
 }
 
-.product__sidebar__view__item h5 {
+.squareCard__title {
   position: absolute;
   left: 0;
   bottom: 25px;
@@ -304,7 +315,7 @@ body {
   padding: 0 30px 0 20px;
 }
 
-.product__sidebar__view__item h5 a {
+.squareCard__title a {
   color: #ffffff;
   font-weight: 700;
   line-height: 26px;
@@ -373,4 +384,8 @@ footer {
 
 .footer__copyright a {
   text-decoration: none;
+}
+
+main {
+  min-height: calc(100vh - 246px);
 }

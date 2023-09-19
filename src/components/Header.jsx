@@ -1,15 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-function HeaderAnime() {
+function Header() {
   return (
     <header className="header">
       <div className="container">
         <div className="row">
           <div className="col col-lg-2">
             <div className="header__logo">
-              <a href="#">
+              <Link to="/">
                 <img src="/src/img/logo.png" alt="logo" />
-              </a>
+              </Link>
             </div>
           </div>
           <div className="col col-lg-8">
@@ -59,10 +60,10 @@ function HeaderAnime() {
                     </div>
                   </li>
                   <li>
-                    <a href="#">Our Blog</a>
+                    <Link to="/blog">Our Blog</Link>
                   </li>
                   <li>
-                    <a href="#">Contacts</a>
+                    <Link to="/contact">Contact</Link>
                   </li>
                 </ul>
               </nav>
@@ -84,4 +85,4 @@ function HeaderAnime() {
   );
 }
 
-export default HeaderAnime;
+export default Header;
