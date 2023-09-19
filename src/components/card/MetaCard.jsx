@@ -1,8 +1,8 @@
 import React from "react";
 
-function MetaCard({ img, title, text }) {
+function MetaCard({ img, title, text, onClick }) {
   return (
-    <div className="card">
+    <div className="card" onClick={onClick}>
       <img
         src={img}
         className="card-img-top"

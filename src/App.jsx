@@ -9,6 +9,7 @@ import Blog from './pages/Blog';
 
 import MainLayout from './components/layout/MainLayout';
 import FootlessLayout from './components/layout/FootlessLayout';
+import AnimeDetail from './pages/AnimeDetail';
 
 const routes = [
   {
@@ -25,6 +26,11 @@ const routes = [
     path: '/blog',
     element: Blog,
     layout: FootlessLayout,
+  },
+  {
+    path: '/anime-detail/:id',
+    element: AnimeDetail,
+    layout: MainLayout,
   },
   {
     path: '*',

@@ -1,10 +1,30 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 // Components
-import MetaCard from "./card/MetaCard";
-import SquareCard from "./card/SquareCard";
+import MetaCard from "../../../components/card/MetaCard";
+import SquareCard from "../../../components/card/SquareCard";
+
 
 function Product() {
+  // states
+  const [products, setProducts] = React.useState([]);
+  // hooks
+  const navigate = useNavigate();
+
+  React.useEffect(() => {
+    async function fetchProducts() {
+      const res = await fetch('http://localhost:8081/product.json');
+      const data = await res.json();
+      setProducts(data.data)
+    }
+    fetchProducts();
+  }, [])
+
+  function handleGotoDetail(productId) {
+    navigate(`/anime-detail/${productId}`)
+  }
+
   return (
     <div className="product">
       <div className="container">
@@ -21,48 +41,16 @@ function Product() {
               </div>
             </div>
             <div className="row">
-              <div className="col col-4">
-                <MetaCard
-                  img="./src/img/trending/trend-1.jpg"
-                  title="Card title"
-                  text="The Seven Deadly Sins: Wrath of the Gods"
-                />
-              </div>
-              <div className="col col-4">
-                <MetaCard
-                  img="./src/img/trending/trend-2.jpg"
-                  title="Card title"
-                  text="Gintama Movie 2: Kanketsu-hen"
-                />
-              </div>
-              <div className="col col-4">
-                <MetaCard
-                  img="./src/img/trending/trend-3.jpg"
-                  title="Card title"
-                  text="Shingeki no Kyojin Season 3 Part 2"
-                />
-              </div>
-              <div className="col col-4">
-                <MetaCard
-                  img="./src/img/trending/trend-4.jpg"
-                  title="Card title"
-                  text="Fullmetal Alchemist: Brotherhood"
-                />
-              </div>
-              <div className="col col-4">
-                <MetaCard
-                  img="./src/img/trending/trend-5.jpg"
-                  title="Card title"
-                  text="Shiratorizawa Gakuen Koukou"
-                />
-              </div>
-              <div className="col col-4">
-                <MetaCard
-                  img="./src/img/trending/trend-6.jpg"
-                  title="Card title"
-                  text="Code Geass: Hangyaku no Lelouch R2"
-                />
-              </div>
+              {products.map(product => (
+                <div key={product.id} className="col col-4">
+                  <MetaCard
+                    img="./src/img/trending/trend-1.jpg"
+                    title={product.title}
+                    text={product.description}
+                    onClick={() => handleGotoDetail(product.id)}
+                  />
+                </div>
+              ))}
             </div>
           </div>
           <div className="col col-4">

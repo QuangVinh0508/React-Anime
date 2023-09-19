@@ -161,6 +161,7 @@ body {
 /* PRODUCT */
 .card {
   margin-bottom: 3rem;
+  cursor: pointer;
 }
 
 .product__trending {
