@@ -6,10 +6,13 @@ import Home from './pages/Home'
 import Contact from './pages/Contact';
 import Page404 from './pages/Page404';
 import Blog from './pages/Blog';
+import Login from './pages/Login';
 
 import MainLayout from './components/layout/MainLayout';
 import FootlessLayout from './components/layout/FootlessLayout';
 import AnimeDetail from './pages/AnimeDetail';
+import AuthRoute from './components/AuthRoute';
+import GuestRoute from './components/GuestRoute';
 
 const routes = [
   {
@@ -31,6 +34,12 @@ const routes = [
     path: '/anime-detail/:id',
     element: AnimeDetail,
     layout: MainLayout,
+    auth: AuthRoute
+  },
+  {
+    path: '/login',
+    element: Login,
+    auth: GuestRoute
   },
   {
     path: '*',
@@ -47,15 +56,18 @@ function App() {
         {routes.map((route, indexRoute) => {
           const Layout = route.layout || React.Fragment;
           const Component = route.element || React.Fragment;
+          const AuthComponent = route?.auth || React.Fragment;
           
           return (
             <Route 
               key={indexRoute}
               path={route.path} 
               element={
-                <Layout>
-                  <Component />
-                </Layout>
+                <AuthComponent>
+                  <Layout>
+                    <Component />
+                  </Layout>
+                </AuthComponent>
               } 
             />
           )
